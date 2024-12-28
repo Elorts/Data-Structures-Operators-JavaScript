@@ -36,6 +36,10 @@ const restaurant = {
       `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
     );
   },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
+  },
 };
 
 restaurant.orderDelivery({
@@ -378,3 +382,42 @@ const arr = [7, 8, 9];
 
 const newArr = [1, 2, ...arr];
 console.log(newArr);
+console.log(...newArr); /// individual prints like (1, 2, 3, 4, ...)
+
+const newMenu = [...restaurant.mainMenu, 'buterbrodas'];
+console.log(newMenu);
+
+// copy array
+
+const mainMenuCopy = [...restaurant.mainMenu]; // shallow copy
+
+// join 2 arrays
+
+const jointMenu = [...mainMenuCopy, ...restaurant.starterMenu];
+console.log(jointMenu);
+
+const str = 'Deividas';
+const letters = [...str, ' ', 'S.'];
+console.log(letters);
+console.log(...str);
+
+// const ingredients = [
+//   prompt("Let's make pasta! Ingredient 1?"),
+//   prompt("Let's make pasta! Ingredient 2?"),
+//   prompt("Let's make pasta! Ingredient 3?"),
+// ];
+
+// console.log(ingredients);
+// console.log('ingredients');
+
+// restaurant.orderPasta(...ingredients);
+
+// objects too
+
+const newRestaurant = { foundedIn: 1999, ...restaurant, founder: 'Mikas' };
+console.log(newRestaurant);
+
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'Mikosius';
+console.log(restaurantCopy.name);
+console.log(restaurant.name);
