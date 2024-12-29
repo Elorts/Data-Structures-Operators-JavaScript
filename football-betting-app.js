@@ -71,17 +71,21 @@ const players1Final = [...players1, "Thiago", "Coutinho", "Perisic"];
 const team1 = game.odds.team1;
 const draw = game.odds.x;
 const team2 = game.odds.team2;
-// console.log(team1);
-// console.log(draw);
-// console.log(team2);
+console.log(team1);
+console.log(draw);
+console.log(team2);
 
-function printGoals(...players) {
-  for (let i = 0; i < players.length; i++) {
-    console.log("palyers length: ", players.length);
-    console.log(`Player: ${players[i]} total goals: ${players.length}`);
-  }
-}
+// function printGoals(...players) {
+//   for (let i = 0; i < players.length; i++) {
+//     console.log("palyers length: ", players.length);
+//     console.log(`Player: ${players[i]} total goals: ${players.length}`);
+//   }
+// }
 
-printGoals("Lewandowski", "Gnarby", "Lewandowski", "Hummels");
+// printGoals("Lewandowski", "Gnarby", "Lewandowski", "Hummels");
 
-console.log(" game array:", game.scored);
+// console.log(" game array:", game.scored);
+
+console.log((team1 < team2 && "team1") || "team2");
+
+//console.log(team1 > team2 || "team2");
