@@ -484,20 +484,71 @@ function printBookAuthorsCount(title, ...authors) {
 printBookAuthorsCount('Algorithms', 'Robert Sedgewick', 'Kevin Wayne');
 
 // -------------------- or ------------------
-restaurant.numGuests = 23;
-const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
-console.log(guests1);
+// restaurant.numGuests = 23;
+// const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+// console.log(guests1);
 
-const guests2 = restaurant.numGuests || 10;
-console.log(guests2);
+// const guests2 = restaurant.numGuests || 10;
+// console.log(guests2);
 
 // ------------------ and --------------------
 
-console.log(0 && 'deividas');
-console.log(7 && 'deividas');
+// console.log(0 && 'deividas');
+// console.log(7 && 'deividas');
 
-if (restaurant.orderPizza) {
-  restaurant.orderPizza('mushrooms', 'spinach');
+// if (restaurant.orderPizza) {
+//   restaurant.orderPizza('mushrooms', 'spinach');
+// }
+
+// restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+
+// function hasExamplesInJava(book) {
+//   return book.programmingLanguage === 'Java' || 'no data available';
+// }
+
+// console.log(hasExamplesInJava(books[1]));
+
+// console.log(
+//   '*********************************************************************************'
+// );
+
+// for (let i = 0; i < books.length; i++) {
+//   books[i].onlineContent && console.log(`${title}`);
+// }
+
+restaurant.numGuests = 0;
+const guests = restaurant.numGuests || 10;
+console.log(guests);
+
+// nullish: null and undefined
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect);
+
+for (let j = 0; j < books.length; j++) {
+  books[j].onlineContent ?? console.log(`last one: ${title}`);
 }
 
-restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+const rest1 = {
+  name: 'Capri',
+  numGuests: 20,
+};
+
+const rest2 = {
+  name: 'Itali',
+  owner: 'Senior',
+};
+
+// OR ASSIGNMENT OPERATOR
+
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
+
+// nullish assignment operator
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+
+console.log(rest1);
+console.log(rest2);
