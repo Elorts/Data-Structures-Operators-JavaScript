@@ -572,3 +572,29 @@ for (let j = 0; j < books.length; j++) {
 
   books[j].highlighted &&= !(books[j].thirdParty.goodreads.rating < 4.2);
 }
+
+const menu1 = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of menu1) console.log(item);
+
+for (const [i, el] of menu1.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
+
+//console.log([...menu.entries()]);
+
+let pageSum = 0;
+for (const item of books) {
+  pageSum += item.pages;
+}
+console.log(`Total pages: ${pageSum}`);
+
+const allAuthors = [];
+
+for (const book of books) {
+  if (typeof book.author === 'string') {
+    //console.log(`String: ${book.author}`);
+    allAuthors.push(book.author);
+  } else allAuthors.push(...book.author);
+}
+console.log(`allAuthors: `, allAuthors);

@@ -55,34 +55,40 @@ const game = {
   },
 };
 
-const players1 = game.players[0];
-const players2 = game.players[1];
-//console.log(players1);
+const [players1, players2] = game.players;
+console.log(players1, players2);
 
 const [gk, ...fieldPlayers] = players1;
 //console.log(fieldPlayers);
 
 const allPlayers = [...players1, ...players2];
-//console.log(allPlayers);
+console.log(allPlayers);
 
 const players1Final = [...players1, "Thiago", "Coutinho", "Perisic"];
 //console.log(players1Final);
 
-const team1 = game.odds.team1;
-const draw = game.odds.x;
-const team2 = game.odds.team2;
-console.log(team1);
-console.log(draw);
-console.log(team2);
+// const team1 = game.odds.team1;
+// const draw = game.odds.x;
+// const team2 = game.odds.team2;
+// console.log(team1);
+// console.log(draw);
+// console.log(team2);
 
-// function printGoals(...players) {
-//   for (let i = 0; i < players.length; i++) {
-//     console.log("palyers length: ", players.length);
-//     console.log(`Player: ${players[i]} total goals: ${players.length}`);
-//   }
-// }
+const {
+  odds: { team1, x: draw, team2 },
+} = game;
+console.log("teams: ", team1, draw, team2);
 
-// printGoals("Lewandowski", "Gnarby", "Lewandowski", "Hummels");
+function printGoals(...players) {
+  for (let i = 0; i < players.length; i++) {
+    console.log("palyers length: ", players.length);
+    console.log(`Player: ${players[i]} total goals: ${players.length}`);
+  }
+}
+
+printGoals(...game.scored);
+console.log("...", ...game.scored);
+console.log("no ...", game.scored);
 
 // console.log(" game array:", game.scored);
 
