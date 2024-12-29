@@ -547,8 +547,28 @@ const rest2 = {
 // rest2.numGuests ||= 10;
 
 // nullish assignment operator
-rest1.numGuests ??= 10;
-rest2.numGuests ??= 10;
+// rest1.numGuests ??= 10;
+// rest2.numGuests ??= 10;
+
+// rest1.owner = rest1.owner && 22;
+// rest2.owner = rest2.owner && 'bybys';
+
+rest1.owner &&= 'bybys';
+rest2.owner &&= 'bybys';
 
 console.log(rest1);
 console.log(rest2);
+
+for (let j = 0; j < books.length; j++) {
+  books[j].edition ||= 1;
+}
+
+for (let j = 0; j < books.length; j++) {
+  if (books[j].thirdParty.goodreads.rating < 4.2) books[j].highlighted = false;
+
+  books[j].highlighted = books[j].thirdParty.goodreads.rating < 4.2;
+
+  books[j].highlighted = books[j].thirdParty.goodreads.rating < 4.2 && false;
+
+  books[j].highlighted &&= !(books[j].thirdParty.goodreads.rating < 4.2);
+}
