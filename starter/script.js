@@ -378,28 +378,28 @@ console.log(
   '***********************12/28/24***********************************'
 );
 
-const arr = [7, 8, 9];
+// const arr = [7, 8, 9];
 
-const newArr = [1, 2, ...arr];
-console.log(newArr);
-console.log(...newArr); /// individual prints like (1, 2, 3, 4, ...)
+// const newArr = [1, 2, ...arr];
+// console.log(newArr);
+// console.log(...newArr); /// individual prints like (1, 2, 3, 4, ...)
 
-const newMenu = [...restaurant.mainMenu, 'buterbrodas'];
-console.log(newMenu);
+// const newMenu = [...restaurant.mainMenu, 'buterbrodas'];
+// console.log(newMenu);
 
-// copy array
+// // copy array
 
-const mainMenuCopy = [...restaurant.mainMenu]; // shallow copy
+// const mainMenuCopy = [...restaurant.mainMenu]; // shallow copy
 
-// join 2 arrays
+// // join 2 arrays
 
-const jointMenu = [...mainMenuCopy, ...restaurant.starterMenu];
-console.log(jointMenu);
+// const jointMenu = [...mainMenuCopy, ...restaurant.starterMenu];
+// console.log(jointMenu);
 
-const str = 'Deividas';
-const letters = [...str, ' ', 'S.'];
-console.log(letters);
-console.log(...str);
+// const str = 'Deividas';
+// const letters = [...str, ' ', 'S.'];
+// console.log(letters);
+// console.log(...str);
 
 // const ingredients = [
 //   prompt("Let's make pasta! Ingredient 1?"),
@@ -414,10 +414,19 @@ console.log(...str);
 
 // objects too
 
-const newRestaurant = { foundedIn: 1999, ...restaurant, founder: 'Mikas' };
-console.log(newRestaurant);
+// const newRestaurant = { foundedIn: 1999, ...restaurant, founder: 'Mikas' };
+// console.log(newRestaurant);
 
-const restaurantCopy = { ...restaurant };
-restaurantCopy.name = 'Mikosius';
-console.log(restaurantCopy.name);
-console.log(restaurant.name);
+// const restaurantCopy = { ...restaurant };
+// restaurantCopy.name = 'Mikosius';
+// console.log(restaurantCopy.name);
+// console.log(restaurant.name);
+
+const bookAuthors = [...books[0].author, ...books[1].author];
+console.log(bookAuthor);
+
+function spellWord(word) {
+  console.log(...word);
+}
+
+spellWord = 'JavaScript';
