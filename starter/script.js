@@ -590,7 +590,6 @@ for (const item of books) {
 console.log(`Total pages: ${pageSum}`);
 
 const allAuthors = [];
-
 for (const book of books) {
   if (typeof book.author === 'string') {
     //console.log(`String: ${book.author}`);
