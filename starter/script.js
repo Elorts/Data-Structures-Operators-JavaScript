@@ -27,17 +27,17 @@ const restaurant = {
     },
   },
 
-  order: function (starterIndex, mainIndex) {
+  order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
-  orderDelivery: function ({ starterIndex = 1, mainIndex = 0, time, address }) {
+  orderDelivery({ starterIndex = 1, mainIndex = 0, time, address }) {
     console.log(
       `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
     );
   },
 
-  orderPasta: function (ing1, ing2, ing3) {
+  orderPasta(ing1, ing2, ing3) {
     console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
   },
 
@@ -628,3 +628,27 @@ const newBook2 = {
   pages,
   // ...
 };
+
+if (restaurant.openingHours) console.log(restaurant.openingHours.mon);
+
+console.log(restaurant.openingHours?.mon?.open);
+
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+for (const day of days) {
+  // console.log(day);
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  console.log(`On ${day}, we open at ${open}`);
+}
+
+// Methods
+
+console.log(restaurant.order?.(0, 1) ?? "Method doesn't exist!");
+
+console.log(restaurant.orderEgg?.(0, 1) ?? "Method doesn't exist!");
+
+// ARRAY
+
+const users = [{ name: 'Deividas', email: 'deiwis@yahoo.com' }];
+
+console.log(users[0]?.name ?? 'No user!');
