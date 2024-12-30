@@ -470,8 +470,8 @@ restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
 
 restaurant.orderPizza('mushrooms');
 
-const [mainKeyword, ...rest] = books[0].keywords;
-console.log(mainKeyword, rest);
+// const [mainKeyword, ...rest] = books[0].keywords;
+// console.log(mainKeyword, rest);
 
 const { publisher: bookPublisher, ...restOfTheBook } = books[1];
 console.log('******', bookPublisher);
@@ -652,3 +652,46 @@ console.log(restaurant.orderEgg?.(0, 1) ?? "Method doesn't exist!");
 const users = [{ name: 'Deividas', email: 'deiwis@yahoo.com' }];
 
 console.log(users[0]?.name ?? 'No user!');
+
+function getFirstKeyword(book) {
+  return book.keywords?.[0] ?? 'undefined';
+}
+
+console.log(getFirstKeyword(books[0]));
+
+console.log('*****************************************');
+
+for (const day of Object.keys(openingHours)) {
+  console.log(day);
+}
+
+// prop names
+
+const properties = Object.keys(openingHours);
+console.log(properties);
+let openStr = `we are open on ${properties.length} days: `;
+for (const day of properties) {
+  openStr += `${day},`;
+}
+console.log(openStr);
+
+// prop values
+
+const values = Object.values(openingHours);
+console.log(values);
+
+// entire object
+const entries = Object.entries(openingHours);
+console.log(entries);
+
+console.log('//////////////////////////////////////////////////////');
+
+for (const [key, { open, close }] of entries) {
+  console.log(`On ${key} we are open at ${open} and close at ${close}`);
+}
+
+console.log('+++++++++++++ assirnments +++++++++++++++++');
+
+const entries = [];
+
+for (thirdParty.goodreads Object.keys())
