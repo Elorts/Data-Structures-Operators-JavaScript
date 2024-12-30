@@ -681,17 +681,29 @@ const values = Object.values(openingHours);
 console.log(values);
 
 // entire object
-const entries = Object.entries(openingHours);
-console.log(entries);
+const entries2 = Object.entries(openingHours);
+console.log(entries2);
 
 console.log('//////////////////////////////////////////////////////');
 
-for (const [key, { open, close }] of entries) {
+for (const [key, { open, close }] of entries2) {
   console.log(`On ${key} we are open at ${open} and close at ${close}`);
 }
 
 console.log('+++++++++++++ assirnments +++++++++++++++++');
 
-const entries = [];
+const entries3 = [];
 
-for (thirdParty.goodreads Object.keys())
+for (const key of Object.keys(books[0].thirdParty.goodreads)) {
+  console.log(`key: ` + key);
+}
+
+// thirdParty: {
+//   goodreads: {
+//     rating: 4.41,
+//     ratingsCount: 1733,
+//     reviewsCount: 63,
+//     fiveStarRatingCount: 976,
+//     oneStarRatingCount: 13,
+//   },
+// },
