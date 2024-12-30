@@ -682,7 +682,7 @@ console.log(values);
 
 // entire object
 const entries2 = Object.entries(openingHours);
-console.log(entries2);
+console.log(`entries2: + ${entries2}`);
 
 console.log('//////////////////////////////////////////////////////');
 
@@ -709,3 +709,45 @@ console.log(entries3);
 //     oneStarRatingCount: 13,
 //   },
 // },
+
+console.log('############################################');
+
+const valArr = [];
+
+const valuesX = Object.values(books[0].thirdParty.goodreads);
+console.log(valuesX);
+
+// entire object
+const entriesX = Object.entries(books[0].thirdParty.goodreads);
+console.log(entriesX);
+
+// for (const val of Object.values(books[0].thirdParty.goodreads)) {
+//   console.log(`val: ${val}`);
+//   valArr.push(val);
+// }
+
+// const entriesY = [[], [], []];
+// for (const [index, value] of Object.values(
+//   books[0].thirdParty.goodreads
+// ).entries()) {
+//   entriesY[index].push(value);
+// }
+
+// console.log(`entriesY: ${entriesY}`);
+
+const entries = [];
+
+for (const key of Object.keys(books[0].thirdParty.goodreads)) {
+  entries.push([key]);
+}
+console.log(`entries after key: ${entries}`);
+
+for (const [index, value] of Object.values(
+  books[0].thirdParty.goodreads
+).entries()) {
+  entries[index].push(value);
+}
+console.log(`entries after val: ${entries}`);
+
+const entries22 = Object.entries(books[0].thirdParty.goodreads);
+console.log(`entries22: ${entries22}`);
