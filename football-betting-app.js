@@ -55,43 +55,34 @@ const game = {
   },
 };
 
-const [players1, players2] = game.players;
-console.log(players1, players2);
-
-const [gk, ...fieldPlayers] = players1;
-//console.log(fieldPlayers);
-
-const allPlayers = [...players1, ...players2];
-console.log(allPlayers);
-
-const players1Final = [...players1, "Thiago", "Coutinho", "Perisic"];
-//console.log(players1Final);
-
-// const team1 = game.odds.team1;
-// const draw = game.odds.x;
-// const team2 = game.odds.team2;
-// console.log(team1);
-// console.log(draw);
-// console.log(team2);
-
-const {
-  odds: { team1, x: draw, team2 },
-} = game;
-console.log("teams: ", team1, draw, team2);
-
-function printGoals(...players) {
-  for (let i = 0; i < players.length; i++) {
-    console.log("palyers length: ", players.length);
-    console.log(`Player: ${players[i]} total goals: ${players.length}`);
-  }
+for (const [goal, player] of game.scored.entries()) {
+  console.log(`Goal ${goal + 1}: ${player}`);
 }
 
-printGoals(...game.scored);
-console.log("...", ...game.scored);
-console.log("no ...", game.scored);
+// const [players1, players2] = game.players;
+// console.log(players1, players2);
 
-// console.log(" game array:", game.scored);
+// const [gk, ...fieldPlayers] = players1;
+// //console.log(fieldPlayers);
 
-console.log((team1 < team2 && "team1") || "team2");
+// const allPlayers = [...players1, ...players2];
+// console.log(allPlayers);
 
-//console.log(team1 > team2 || "team2");
+// const players1Final = [...players1, "Thiago", "Coutinho", "Perisic"];
+
+// const {
+//   odds: { team1, x: draw, team2 },
+// } = game;
+// console.log("teams: ", team1, draw, team2);
+
+// function printGoals(...players) {
+//   for (let i = 0; i < players.length; i++) {
+//     console.log("palyers length: ", players.length);
+//     console.log(`Player: ${players[i]} total goals: ${players.length}`);
+//   }
+// }
+
+// printGoals(...game.scored);
+// console.log("...", ...game.scored);
+// console.log("no ...", game.scored);
+// console.log((team1 < team2 && "team1") || "team2");
