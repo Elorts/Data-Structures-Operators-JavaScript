@@ -55,7 +55,21 @@ const game = {
   },
 };
 
+const scr = {};
+for (let i = 0; i < 3; i++) {}
+
+const scorers = {
+  Gnarby: 1,
+  Hummels: 1,
+  Lewandowski: 2,
+};
 // Coding Challenge #2
+// 3.
+for (const [team, odd] of Object.entries(game.odds)) {
+  console.log(`[team, odd]: ${[team, odd]}`);
+  const teamStr = team === "x" ? "draw" : `victory ${game[team]}`;
+  console.log(`Odd of ${teamStr} ${odd}`);
+}
 
 /* 
 Let's continue with our football betting app!
@@ -78,32 +92,24 @@ BONUS: Create an object called 'scorers' which contains the names of the players
 GOOD LUCK 😀
 */
 
-// 1.
+// // 1.
 // for (const [goal, player] of game.scored.entries()) {
 //   console.log(`Goal ${goal + 1}: ${player}`);
 // }
 
-// // 2.
+// // // 2.
 // let total = 0;
 // for (const odd of Object.values(game.odds)) {
 //   total += odd;
 // }
 // console.log(`Average odd: ${total / 3}`);
 
-//3.
-for (const key of Object.keys(game.odds)) {
-  // if (game[key]) {
-  //   console.log(`Odd of victory ${game[key]}: ${game.odds[key]}`);
-  // } else {
-  //   console.log(`Odd of draw: ${game.odds[key]}`);
-  // }
+// //3.
+// for (const key of Object.keys(game.odds)) {
+//   console.log((game[key] && `Odd of victory ${game[key]}: ${game.odds[key]}`) || `Odd of draw: ${game.odds[key]}`);
+// }
 
-  console.log(
-    (game[key] && `Odd of victory ${game[key]}: ${game.odds[key]}`) ||
-      `Odd of draw: ${game.odds[key]}`
-  );
-  // console.log(`Odd of draw: ${game.odds[key]}`);
-}
+// bonus
 
 // const [players1, players2] = game.players;
 // console.log(players1, players2);
