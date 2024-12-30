@@ -593,14 +593,14 @@ const allAuthors = [];
 let j = 0;
 for (const [i, book] of books.entries()) {
   if (typeof book.author === 'string') {
-    j += i + 1;
-    console.log(`entries i: ${i} and j: ${j}`);
+    j++;
+    console.log(`entries i: ${i}`);
     allAuthors.push(`${j} ${book.author}`);
   } else {
     for (const [ii, author] of book.author.entries()) {
-      j += ii + 1;
-      console.log(`entries ii: ${ii} and j: ${j}`);
-      allAuthors.push(`${j} ${book.author}`);
+      j++;
+      console.log(`entries ii: ${ii}`);
+      allAuthors.push(`${j} ${book.author[ii]}`);
     }
   }
 }
