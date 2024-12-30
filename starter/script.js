@@ -774,3 +774,14 @@ orderSet.add('Garlic Bread');
 console.log(orderSet);
 orderSet.delete('Risotto');
 console.log(orderSet);
+
+for (const order of orderSet) console.log(order);
+
+// Example
+
+const staff = ['Waiter', 'Chef', 'Waiter', 'Chef'];
+
+const staffUni = [...new Set(staff)];
+console.log(staffUni);
+console.log(new Set(['Waiter', 'Chef', 'Waiter', 'Chef']).size);
+console.log(new Set('deividas').size);
