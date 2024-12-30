@@ -695,9 +695,11 @@ console.log('+++++++++++++ assirnments +++++++++++++++++');
 const entries3 = [];
 
 for (const key of Object.keys(books[0].thirdParty.goodreads)) {
-  console.log(`key: ` + key);
+  // console.log(`key: ` + key);
+  entries3.push([key]);
 }
 
+console.log(entries3);
 // thirdParty: {
 //   goodreads: {
 //     rating: 4.41,
