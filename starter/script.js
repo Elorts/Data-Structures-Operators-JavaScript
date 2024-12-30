@@ -711,7 +711,7 @@ console.log(entries3);
 // },
 
 console.log('############################################');
-
+/*
 const valArr = [];
 
 const valuesX = Object.values(books[0].thirdParty.goodreads);
@@ -719,7 +719,7 @@ console.log(valuesX);
 
 // entire object
 const entriesX = Object.entries(books[0].thirdParty.goodreads);
-console.log(entriesX);
+console.log(entriesX); */
 
 // for (const val of Object.values(books[0].thirdParty.goodreads)) {
 //   console.log(`val: ${val}`);
@@ -734,7 +734,7 @@ console.log(entriesX);
 // }
 
 // console.log(`entriesY: ${entriesY}`);
-
+/*
 const entries = [];
 
 for (const key of Object.keys(books[0].thirdParty.goodreads)) {
@@ -750,4 +750,27 @@ for (const [index, value] of Object.values(
 console.log(`entries after val: ${entries}`);
 
 const entries22 = Object.entries(books[0].thirdParty.goodreads);
-console.log(`entries22: ${entries22}`);
+console.log(`entries22: ${entries22}`); */
+
+// *******************    SETS  ******************************
+
+const orderSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+
+console.log(orderSet);
+
+console.log(new Set('Deividas'));
+
+console.log(orderSet.size);
+console.log(orderSet.has('Bred'));
+console.log(orderSet.has('Pizza'));
+orderSet.add('Garlic Bread');
+console.log(orderSet);
+orderSet.delete('Risotto');
+console.log(orderSet);

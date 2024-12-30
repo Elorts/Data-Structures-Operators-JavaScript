@@ -58,18 +58,29 @@ const game = {
 const scr = {};
 for (let i = 0; i < 3; i++) {}
 
-const scorers = {
-  Gnarby: 1,
-  Hummels: 1,
-  Lewandowski: 2,
-};
+// const scorers = {
+//   Gnarby: 1,
+//   Hummels: 1,
+//   Lewandowski: 2,
+// };
 // Coding Challenge #2
 // 3.
-for (const [team, odd] of Object.entries(game.odds)) {
-  console.log(`[team, odd]: ${[team, odd]}`);
-  const teamStr = team === "x" ? "draw" : `victory ${game[team]}`;
-  console.log(`Odd of ${teamStr} ${odd}`);
+// for (const [team, odd] of Object.entries(game.odds)) {
+//   console.log(`[team, odd]: ${[team, odd]}`);
+//   const teamStr = team === "x" ? "draw" : `victory ${game[team]}`;
+//   console.log(`Odd of ${teamStr} ${odd}`);
+// }
+
+console.log(
+  `***************//////////////******************--------------------**********************`
+);
+
+const scorers = {};
+for (const player of game.scored) {
+  // console.log(`game.scored: ${game.scored} `);
+  scorers[player] ? scorers[player]++ : (scorers[player] = 1);
 }
+console.log(scorers);
 
 /* 
 Let's continue with our football betting app!
