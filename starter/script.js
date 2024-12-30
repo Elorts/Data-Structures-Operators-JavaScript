@@ -590,10 +590,18 @@ for (const item of books) {
 console.log(`Total pages: ${pageSum}`);
 
 const allAuthors = [];
-for (const book of books) {
+let j = 0;
+for (const [i, book] of books.entries()) {
   if (typeof book.author === 'string') {
-    //console.log(`String: ${book.author}`);
-    allAuthors.push(book.author);
-  } else allAuthors.push(...book.author);
+    j += i + 1;
+    console.log(`entries i: ${i} and j: ${j}`);
+    allAuthors.push(`${j} ${book.author}`);
+  } else {
+    for (const [ii, author] of book.author.entries()) {
+      j += ii + 1;
+      console.log(`entries ii: ${ii} and j: ${j}`);
+      allAuthors.push(`${j} ${book.author}`);
+    }
+  }
 }
 console.log(`allAuthors: `, allAuthors);
