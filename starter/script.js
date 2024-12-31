@@ -946,3 +946,87 @@ checkMiddleSeat('23C');
 checkMiddleSeat('3E');
 
 console.log(new String('Deividas'));
+
+const airways = 'Norse';
+
+console.log(airways.toLocaleLowerCase());
+console.log(airways.toUpperCase());
+
+const passanger = 'dEIVIDAS';
+const passangerLower = passanger.toLocaleLowerCase();
+const passangerCorrect =
+  passangerLower[0].toUpperCase() + passangerLower.slice(1);
+console.log('passangerCorrect: ' + passangerCorrect);
+
+const email = 'deiwis@yaoo.com';
+const loginEmail = '  Deiwis@Yahoo.Com \n';
+const lower = loginEmail.toLowerCase();
+const trimmed = lower.trim();
+console.log(trimmed);
+
+const normalized = loginEmail.toLowerCase().trim();
+console.log(normalized);
+
+// repalcing
+
+const priceGB = '299,95&';
+const priceUS = priceGB.replace('&', '$').replace(',', '.');
+console.log(priceUS);
+
+const announcement = 'All passangers come to door 23. The door 23!';
+
+//console.log(announcement.replaceAll('door', 'gate'));
+
+console.log(announcement.replace(/door/g, 'gate'));
+
+// Booleans
+
+const planeE = 'A320neo';
+console.log(planeE.includes('A320'));
+console.log(planeE.includes('R'));
+console.log(planeE.startsWith('A3'));
+
+if (planeE.startsWith('A') && planeE.endsWith('eo')) {
+  console.log('Part of the new Airbus family!');
+}
+
+// Practice
+
+const checkBaggage = function (items) {
+  const baggage = items.toLocaleLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('Not allowed!');
+  } else {
+    console.log('Allowed!');
+  }
+};
+
+checkBaggage('I have a Laptop, Food, and a pocket Knife');
+checkBaggage('I have socks and camera');
+checkBaggage('Got some snacks and a gun');
+
+// split and join
+
+console.log('a+very+nice+string'.split('+')); // arrya
+//console.log('Deividas Strole'.split(' '));
+
+const [firstName, lastName] = 'Deividas Strole'.split(' ');
+
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+console.log(firstName, lastName);
+
+// ******************************
+
+const capitalizeName = function (name) {
+  const names = name.split(' ');
+  const namesUpper = [];
+
+  for (const n of names) {
+    namesUpper.push(n[0].toUpperCase() + n.slice(1));
+  }
+  console.log(namesUpper.join(' '));
+};
+
+capitalizeName('jessica ann smith davis');
+capitalizeName('deividas strole');
