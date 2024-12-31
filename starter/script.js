@@ -351,6 +351,17 @@ for (const [key, val] of firstBookMap) {
 
 console.log(`8888888888888888888888888888888888888888888888888888888`);
 
+console.log(books[0].ISBN);
+console.log(
+  books[0].ISBN[6],
+  books[0].ISBN[4],
+  books[0].ISBN[9],
+  books[0].ISBN[8]
+);
+
+const quote =
+  'A computer once beat me at chess, but it was no match for me at kick boxing';
+
 // const [firstBook, secondBook] = books;
 // console.log(firstBook, secondBook);
 
@@ -910,6 +921,7 @@ rest.set(document.querySelector('h1'), 'Heading');
 
 console.log(rest.get(arras));
 */
+/////////////////////////////////////     lektuvai ***************
 
 const airline = 'TAP Air Portugal';
 const plane = 'A320';
@@ -1030,3 +1042,46 @@ const capitalizeName = function (name) {
 
 capitalizeName('jessica ann smith davis');
 capitalizeName('deividas strole');
+
+// Padding
+
+const message = 'Go to gate 23!';
+console.log(message.padStart(25, '+').padEnd(26, '+'));
+
+const maskCC = function (number) {
+  const str = number + '';
+  const last = str.slice(-4);
+  console.log('last:' + last);
+  return last.padStart(str.length, '*');
+};
+
+console.log(maskCC(4455889966552233));
+console.log(maskCC('8899774455669988'));
+console.log(maskCC(123456));
+
+// repeat
+const messageR = 'Bad weather... All departures delayed..!';
+console.log(messageR.repeat(5));
+
+const planesInLine = function (n) {
+  console.log(`There are ${n} planes in line ${'✈'.repeat(n)}`);
+};
+
+planesInLine(5);
+planesInLine(3);
+planesInLine(12);
+
+const quote2 =
+  'A computer once beat me at chess, but it was no match for me at kick boxing';
+console.log(quote2.indexOf('chess'));
+
+//const lastWord = quote2.
+
+console.log(quote2.slice(quote2.lastIndexOf(' ') + 1));
+
+const isContributor = function (name) {
+  console.log(name.slice(name.lastIndexOf(' ') + 1) === '(Contributor)');
+};
+
+isContributor('Julie Sussman (Contributor)');
+isContributor('Robert Sedgewick');
