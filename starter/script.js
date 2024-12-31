@@ -1080,7 +1080,8 @@ console.log(quote2.indexOf('chess'));
 console.log(quote2.slice(quote2.lastIndexOf(' ') + 1));
 
 const isContributor = function (name) {
-  console.log(name.slice(name.lastIndexOf(' ') + 1) === '(Contributor)');
+  // console.log(name.slice(name.lastIndexOf(' ') + 1) === '(Contributor)');
+  console.log(name.lastIndexOf('(Contributor)') !== -1);
 };
 
 isContributor('Julie Sussman (Contributor)');
