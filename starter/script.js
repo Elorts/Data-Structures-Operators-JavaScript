@@ -47,40 +47,36 @@ const restaurant = {
   },
 };
 
-restaurant.orderDelivery({
-  time: '22:30',
-  address: 'Via del Sole, 21',
-  mainIndex: 2,
-  starterIndex: 2,
-});
+const question = new Map([
+  ['question', 'Whats the best programming language?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JavaScript'],
+  ['correct', '2'],
+  [true, 'Correct!! :)'],
+  [false, 'Try again!'],
+]);
 
-const { name, openingHours, categories } = restaurant;
-// console.log(name, openingHours, categories);
+console.log(question);
 
-const {
-  name: restaurantName,
-  openingHours: hours,
-  categories: tags,
-} = restaurant;
+//const hoursMap = new Map(Object.entries(openingHours));
 
-console.log(restaurantName, hours, tags);
+// Quiz App
+console.log(`++++++++++++++++++++++++++++++++++++++++++++++++`);
+console.log(question.get('question'));
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+}
+//const answer = prompt('Your answer');
+const answer = 3;
+console.log(`answer: ${answer}`);
+//console.log(question.get(answer === '2'));
 
-const { menu = [], starterMenu: starters = [] } = restaurant;
-console.log(menu, starters);
+console.log(question.get(question.get('correct') === answer));
 
-let a = 111;
-let b = 222;
-const obj = { a: 23, b: 7, c: 14 };
+// convert map to array
 
-({ a, b } = obj);
-console.log(a, b);
-
-// nested obj
-
-const {
-  fri: { open: o, close: c },
-} = openingHours;
-console.log(o, c);
+console.log('convert back!!!!:::::::::::' + [...question]);
 
 // Mutating var
 
@@ -323,6 +319,37 @@ const books = [
     highlighted: true,
   },
 ];
+
+// Assignments MAP
+
+const bookMap = new Map([
+  ['title', 'Clean Code'],
+  ['author', 'Robert C. Martin'],
+]);
+
+console.log(`bookMap: ${[...bookMap]}`);
+
+bookMap.set('pages', 464);
+console.log(`bookMap: ${[...bookMap]}`);
+
+const title = bookMap.get('title');
+const author = bookMap.get('author');
+console.log(` /////////////// ******************${title} by ${author}`);
+
+console.log(`sizeeeeeeeeeeeeeeeeeeeeeeeeeeeeee: ${bookMap.size}`);
+
+if (bookMap.has('author')) console.log('The author of the book is known');
+
+bookMap.has('author') && console.log('The author of the book is known');
+
+const firstBookMap = new Map(Object.entries(books[0]));
+console.log(`firstBookMap: ${[...firstBookMap]}`);
+
+for (const [key, val] of firstBookMap) {
+  if (typeof key === 'number') console.log(`@@@@@@@@@@@@@@@@@@ ${key}`);
+}
+
+console.log(`8888888888888888888888888888888888888888888888888888888`);
 
 // const [firstBook, secondBook] = books;
 // console.log(firstBook, secondBook);
@@ -754,7 +781,7 @@ const entries22 = Object.entries(books[0].thirdParty.goodreads);
 console.log(`entries22: ${entries22}`); */
 
 // *******************    SETS  ******************************
-
+/*
 const orderSet = new Set([
   'Pasta',
   'Pizza',
@@ -786,9 +813,9 @@ const staffUni = [...new Set(staff)];
 console.log(staffUni);
 console.log(new Set(['Waiter', 'Chef', 'Waiter', 'Chef']).size);
 console.log(new Set('deividas').size);
-
+*/
 // ASSIGNMENTS **************************
-
+/*
 const allKeywords = [];
 for (const book of books) {
   allKeywords.push(...book.keywords);
@@ -810,7 +837,7 @@ console.log('array: ' + [...uniqueKeywords]);
 
 uniqueKeywords.clear();
 console.log('set after deletion: ' + [...uniqueKeywords]);
-
+*/
 const italianFoods = new Set([
   'pasta',
   'gnochi',
@@ -828,7 +855,7 @@ const mexicanFoods = new Set([
   'avocado',
   'garlic',
 ]);
-
+/*
 const commonFoods = italianFoods.intersection(mexicanFoods);
 console.log(commonFoods);
 console.log([...commonFoods]);
@@ -849,3 +876,36 @@ const uniqueIM = italianFoods.symmetricDifference(mexicanFoods);
 console.log(`uniqueIM: ${uniqueIM}`);
 
 console.log(italianFoods.isDisjointFrom(mexicanFoods));
+*/
+
+const rest = new Map();
+rest.set('name', 'Classico Italiano');
+rest.set(1, 'Milan');
+
+console.log(rest.set(2, 'Lisbon'));
+
+rest
+  .set('categories', ['Ita', 'Ltu', 'Pol', 'Usa'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are open :)')
+  .set(false, 'We are closed :(');
+
+// console.log(rest.get('name'));
+// console.log(rest.get(true));
+
+const time = 8;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+console.log(rest.has('categories'));
+rest.delete(2);
+console.log(rest);
+console.log(rest.size);
+//rest.clear();
+
+const arras = [1, 2];
+rest.set(arras, 'Test');
+
+rest.set(document.querySelector('h1'), 'Heading');
+
+console.log(rest.get(arras));
