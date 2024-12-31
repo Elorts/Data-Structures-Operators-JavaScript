@@ -340,7 +340,7 @@ const books = [
 // const ratingStars = [63405, 1808];
 // const [fiveStarRatings, oneStarRatings, threeStarRatings = 0] = ratingStars;
 // console.log(fiveStarRatings, oneStarRatings, threeStarRatings);
-
+/*
 const [{ title, author, ISBN }] = books;
 console.log(title, author, ISBN);
 
@@ -382,7 +382,7 @@ printBookInfo({ title: 'Algorithms', author: 'Robert Sedgewick' });
 console.log(
   '***********************12/28/24***********************************'
 );
-
+*/
 // const arr = [7, 8, 9];
 
 // const newArr = [1, 2, ...arr];
@@ -426,7 +426,7 @@ console.log(
 // restaurantCopy.name = 'Mikosius';
 // console.log(restaurantCopy.name);
 // console.log(restaurant.name);
-
+/*
 const bookAuthors = [...books[0].author, ...books[1].author];
 console.log(bookAuthors);
 
@@ -482,7 +482,7 @@ function printBookAuthorsCount(title, ...authors) {
 }
 
 printBookAuthorsCount('Algorithms', 'Robert Sedgewick', 'Kevin Wayne');
-
+*/
 // -------------------- or ------------------
 // restaurant.numGuests = 23;
 // const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
@@ -515,7 +515,7 @@ printBookAuthorsCount('Algorithms', 'Robert Sedgewick', 'Kevin Wayne');
 // for (let i = 0; i < books.length; i++) {
 //   books[i].onlineContent && console.log(`${title}`);
 // }
-
+/*
 restaurant.numGuests = 0;
 const guests = restaurant.numGuests || 10;
 console.log(guests);
@@ -700,6 +700,7 @@ for (const key of Object.keys(books[0].thirdParty.goodreads)) {
 }
 
 console.log(entries3);
+*/
 // thirdParty: {
 //   goodreads: {
 //     rating: 4.41,
@@ -710,7 +711,7 @@ console.log(entries3);
 //   },
 // },
 
-console.log('############################################');
+//console.log('############################################');
 /*
 const valArr = [];
 
@@ -763,7 +764,7 @@ const orderSet = new Set([
   'Pizza',
 ]);
 
-console.log(orderSet);
+console.log('orderSet: ', orderSet);
 
 console.log(new Set('Deividas'));
 
@@ -785,3 +786,55 @@ const staffUni = [...new Set(staff)];
 console.log(staffUni);
 console.log(new Set(['Waiter', 'Chef', 'Waiter', 'Chef']).size);
 console.log(new Set('deividas').size);
+
+// ASSIGNMENTS **************************
+
+const allKeywords = [];
+for (const book of books) {
+  allKeywords.push(...book.keywords);
+}
+console.log(`allKeywords: ${allKeywords}`);
+
+const uniqueKeywords = new Set(allKeywords);
+console.log(`new Set: ${[...uniqueKeywords]}`);
+
+uniqueKeywords.add('coding');
+uniqueKeywords.add('science');
+console.log('added elements: ' + [...uniqueKeywords]);
+
+uniqueKeywords.delete('business');
+console.log('deleted business ' + [...uniqueKeywords]);
+
+const uniqueKeywordsArr = [...uniqueKeywords];
+console.log('array: ' + [...uniqueKeywords]);
+
+uniqueKeywords.clear();
+console.log('set after deletion: ' + [...uniqueKeywords]);
+
+const italianFoods = new Set([
+  'pasta',
+  'gnochi',
+  'tomatoes',
+  'olive oil',
+  'garlic',
+  'basil',
+]);
+
+const mexicanFoods = new Set([
+  'tortillas',
+  'beans',
+  'rice',
+  'tomatoes',
+  'avocado',
+  'garlic',
+]);
+
+const commonFoods = italianFoods.intersection(mexicanFoods);
+console.log(commonFoods);
+console.log([...commonFoods]);
+
+const italianMexicanFusion = italianFoods.union(mexicanFoods);
+console.log(italianMexicanFusion);
+
+const union = new Set([...italianFoods, ...mexicanFoods]);
+console.log(`union: ${union}`);
