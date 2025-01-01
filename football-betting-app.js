@@ -226,3 +226,70 @@ Afterwards, test with your own test data!
 
 GOOD LUCK 😀
 */
+
+document.body.append(document.createElement("textarea"));
+document.body.append(document.createElement("button"));
+
+document.querySelector("button").addEventListener("click", function () {
+  const text = document.querySelector("textarea").value;
+  const splitted = text.split("\n");
+  let i = 1;
+  for (const word of splitted) {
+    const [first, second] = word.toLowerCase().trim().split("_");
+    const finished = first + second.charAt(0).toUpperCase() + second.slice(1);
+    console.log(`${finished.padEnd(20, " ")}    ${"✅".repeat(i)}`);
+    i++;
+  }
+});
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+
+/*
+
+document.querySelector("button").addEventListener("click", function () {
+  const text = document.querySelector("textarea").value;
+  const rows = text.split("\n");
+
+  for (const [i, row] of rows.entries()) {
+    const [first, second] = row.toLowerCase().trim().split("_");
+
+    const output = `${first}${second.replace(
+      second[0],
+      second[0].toUpperCase()
+    )}`;
+    console.log(`${output.padEnd(20)}${"✅".repeat(i + 1)}`);
+  }
+});
+*/
