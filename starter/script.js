@@ -1169,20 +1169,41 @@ logBookCategories(bookCategories);
 
 // 17.2
 
+function getKeywordsAsString(books) {
+  let keywordsSet = new Set();
+
+  for (const b of books) {
+    for (const k of b.keywords) {
+      keywordsSet.add(k);
+    }
+  }
+
+  const resStr = [...keywordsSet].join(';');
+  console.log(resStr);
+}
+
+getKeywordsAsString(books);
+
 console.log(
   '7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777'
 );
 
-function getKeywordsAsString(books) {
-  //collects keywords from each book
+// 17.3
 
-  const keywords = books.keywords;
-  console.log(keywords);
+const bookChapters = [
+  ['The Basics', 14],
+  ['Sorting', 254],
+  ['Searching', 372],
+  ['Graphs', 526],
+  ['Strings', 706],
+];
 
-  // removes duplicates
-
-  //joins them to create a single string where keywords are separated by a semicolon.
-  console.log(books);
+function logBookChapters(bookChapters) {
+  for (const [title, page] of bookChapters) {
+    //const [title, page] = [...bc];
+    // console.log(title + ' ' + title.length);
+    console.log(title.padEnd(20, '_') + ' ' + page);
+  }
 }
 
-getKeywordsAsString(books);
+logBookChapters(bookChapters);
