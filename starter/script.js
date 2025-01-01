@@ -1086,3 +1086,69 @@ const isContributor = function (name) {
 
 isContributor('Julie Sussman (Contributor)');
 isContributor('Robert Sedgewick');
+
+/// 16.1
+
+console.log('--------------------------------------------------------');
+
+const normalizeAuthorName = function (author) {
+  const lowercased = author.toLowerCase().trim();
+  let temp = lowercased;
+
+  if (lowercased.lastIndexOf('(contributor)') !== -1) {
+    temp = lowercased.slice(0, lowercased.lastIndexOf(' '));
+  }
+  const stri = temp.split(' ');
+  const first =
+    stri[0][0].toUpperCase() +
+    stri[0].slice(1) +
+    ' ' +
+    stri[1][0].toUpperCase() +
+    stri[1].slice(1);
+  return first;
+};
+
+console.log(normalizeAuthorName('  JuliE sussMan (Contributor)'));
+console.log(normalizeAuthorName('  JuliEe sussMann'));
+
+console.log('555555555555555555555555555555555555555555555555555555555');
+
+// 16.2
+
+const newBookTitle = books[1].title.replace('Programs', 'Software');
+console.log(newBookTitle);
+
+console.log(
+  '333333333333333333333333333333333333333333333333333333333333333333333333333333333333'
+);
+
+function logBookTheme(title) {
+  const lowerd = title.toLowerCase();
+
+  //****"This book is about computers" if the title starts with the word "computer",
+
+  //"This book is about algorithms and data structures" if the title includes both the "algorithms" and "structures" words.
+
+  //"This book is about some systems, but definitely not about operating systems" if the title ends with the word "system" or "systems", but doesn't include the word "operating".
+  if (lowerd.slice(0, lowerd.indexOf(' ')) === 'computer') {
+    console.log('This book is about computers');
+  } else if (lowerd.includes('algorithms') && lowerd.includes('structures')) {
+    console.log('This book is about algorithms and data structures');
+  } else if (
+    (lowerd.endsWith('system') || lowerd.endsWith('systems')) &&
+    !lowerd.includes('operating')
+  ) {
+    console.log(
+      'This book is about some systems, but definitely not about operating systems'
+    );
+  } else {
+    console.log('Book Unknown');
+  }
+
+  console.log();
+}
+
+logBookTheme('Mikas, bybikas');
+logBookTheme('Computer science 101');
+logBookTheme('Algorithms and data structures');
+logBookTheme('Tractor engine systems');
