@@ -1152,3 +1152,37 @@ logBookTheme('Mikas, bybikas');
 logBookTheme('Computer science 101');
 logBookTheme('Algorithms and data structures');
 logBookTheme('Tractor engine systems');
+
+//17.1
+
+const bookCategories =
+  'science;computing;computer science;algorithms;business;operating systems;networking;electronics';
+
+function logBookCategories(categories) {
+  const arr = categories.split(';');
+  for (const cat of arr) console.log(cat);
+
+  arr.forEach(cat => console.log(cat));
+}
+
+logBookCategories(bookCategories);
+
+// 17.2
+
+console.log(
+  '7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777'
+);
+
+function getKeywordsAsString(books) {
+  //collects keywords from each book
+
+  const keywords = books.keywords;
+  console.log(keywords);
+
+  // removes duplicates
+
+  //joins them to create a single string where keywords are separated by a semicolon.
+  console.log(books);
+}
+
+getKeywordsAsString(books);
