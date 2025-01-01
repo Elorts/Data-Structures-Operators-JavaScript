@@ -233,12 +233,11 @@ document.body.append(document.createElement("button"));
 document.querySelector("button").addEventListener("click", function () {
   const text = document.querySelector("textarea").value;
   const splitted = text.split("\n");
-  let i = 1;
-  for (const word of splitted) {
+  for (const [i, word] of splitted.entries()) {
     const [first, second] = word.toLowerCase().trim().split("_");
-    const finished = first + second.charAt(0).toUpperCase() + second.slice(1);
-    console.log(`${finished.padEnd(20, " ")}    ${"✅".repeat(i)}`);
-    i++;
+    // const finished = first + second.charAt(0).toUpperCase() + second.slice(1);
+    const finished = first + second.replace(second[0], second[0].toUpperCase());
+    console.log(`${finished.padEnd(20)}    ${"✅".repeat(i + 1)}`);
   }
 });
 
